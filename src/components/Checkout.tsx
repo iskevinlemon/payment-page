@@ -42,7 +42,7 @@ const Checkout:React.FC<CheckoutProps> = ({paymentDetails}) => {
 
                                 <div className="dropdown float-start">
                                     <button data-bs-toggle="dropdown" className="btn-test-mode-info">
-                                        <i className="fas fa-circle-info me-2"></i>
+                                        <i className="text-dark fas fa-circle-info me-2"></i>
                                     </button>
                                     <ul className="dropdown-menu p-3" style={{
                                             fontSize: "0.85rem", 
@@ -126,13 +126,13 @@ const Checkout:React.FC<CheckoutProps> = ({paymentDetails}) => {
                         <li className="nav-item me-2">
                             <a className="nav-link active px-4" data-bs-toggle="tab" href="#card_payment">
                                 <i className="far fa-credit-card me-2"></i>
-                                Card payment
+                                Card
                             </a>
                         </li>
                         <li className="nav-item me-2">
                             <a className="nav-link px-4" data-bs-toggle="tab" href="#cash_payment">
                                 <i className="far fa-money-bill-1 me-2"></i>
-                                Cash payment
+                                Cash
                             </a>
                         </li>
                     </ul>
