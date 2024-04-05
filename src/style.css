@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+html{
+  scroll-behavior: smooth !important;
+}
+:root{
+  --theme:  #0c1016;
+  --headings:  #434d5d;
+  --border: #d0d0d0;
+}
+body{
+  font-family: 'Inter', sans-serif !important;
+  overflow-x: hidden !important;
+  letter-spacing: .3px !important;
+  background-color: #fff !important;
+}
+div, p, button, span{
+  font-size: 0.9rem !important;
+}
+h1,h2,h3,h4,h5,h6{
+  color: var(--headings) !important;
+}
+.text-border{
+  color: var(--border) !important;
+}
+.btn{
+  /* border-radius: .275rem !important; */
+  border-radius: .475rem;
+  box-shadow: none !important;
+  font-size: 0.85rem !important;
+  padding: .65rem 1.25rem !important;
+  color: var(--theme);
+}
+.btn-white{
+  background-color: #fff;
+  border: 1px solid var(--border) !important;
+}
+.btn-white:hover{
+  background-color: #f1f1f1 !important;
+}
+.apple-pay-btn{
+  font-size: 1.05rem !important;
+}
+.bg-dark{
+  background-color: var(--theme) !important;
+  color: #fff;
+}
+.bg-dark:hover{
+  opacity: 0.8;
+  color: #fff;
+}
+.bg-dark:active{
+  opacity: 1 !important;
+  color: #fff;
+}
+.bg-dark:focus{
+  opacity: 1 !important;
+  color: #fff;
+}
+.form-control{
+  box-shadow: none !important;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px !important; */
+  border: .5px solid var(--border) !important;
+  border-radius: .475rem;
+}
+.form-control::placeholder{
+  color: #d0d0d0;
+}
+.form-control:focus{
+  border: 2px solid var(--theme) !important;
+}
+.form-control-lg{
+  height: calc(1.6em + 1rem + 2px);
+  font-size: .9rem !important;
+}
+.fc-shipping-name{
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+.fc-country{
+  border-radius: 0px !important;
+}
+.fc-address{
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+}
+.fc-card-info{
+  border-right: none !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom: none !important;
+}
+.fcc-vma{
+  border-bottom-right-radius: 0px !important;
+  border-bottom: none !important;
+}
+.fc-mm-yy{
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+.fc-cvc{
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+.input-group-lg>.btn, .input-group-lg>.form-control, .input-group-lg>.form-select, 
+.input-group-lg>.input-group-text{
+  height: calc(1.6em + 1rem + 2px);
+  font-size: .9rem !important;
+}
+.input-group-text{
+  border-radius: .275rem;
+}
+.form-check-input{
+  width: 1.1em;
+  height: 1.1em;
+}
+.form-check-input[type=checkbox]{
+  border-radius: .25em;
+}
+.form-check-input{
+  border: 1px solid var(--border) !important;
+}
+.form-check-input:checked{
+  box-shadow: none !important;
+  background-color: var(--theme) !important;
+  border-color: var(--theme) !important;
+}
+.form-check-input:focus{
+  box-shadow: none !important;
+}
+/* .col-md-6{
+  border-left: 1px solid var(--border) !important;
+} */
+.col-pa{
+  box-shadow: 0px 0px 55px -30px  rgba(0, 0, 0, 0.16);
+}
+.payment-area{
+  padding: 50px 115px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  /* width: 500px !important; */
+  /* max-width: 600px; */
+}
+@media only screen and (max-width: 900px){
+  .payment-area{
+    padding: 35px !important;
+  }
+  .pa-payment-details{
+    margin-top: -5px !important;
+  }
+}
+.merchant-icon{
+  border: none !important;
+  border-radius: 10rem;
+  padding: 10px 8px !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px !important;
+}
+.field-label{
+  color: #858585 !important;
+  margin-bottom: 3px !important;
+}
+.text-secondary{
+  color: #858585 !important;
+}
+.item-card{
+  border: none !important;
+  border-radius: .475rem;
+  /* border: .1px solid var(--border) !important; */
+}
+.total-card{
+  border-radius: 0px !important;
+  border: none;
+  border-top: .1px solid var(--border) !important;
+}
+.badge{
+  border-radius: .275rem !important;
+  font-weight: 300 !important;
+}
+.bg-warning{
+  background-color: #ffe4a1 !important;
+}
