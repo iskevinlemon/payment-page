@@ -1,6 +1,6 @@
 import Checkout from "./components/Checkout";
 
-interface PaymentDetails{
+export interface PaymentDetails{
   isTestMode: boolean;
   merchantName: string;
   itemName: string;
