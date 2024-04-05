@@ -129,7 +129,7 @@ const Checkout:React.FC<CheckoutProps> = ({paymentDetails}) => {
 
                     <div className="d-grid mb-3 mt-3">
                         <button className="btn bg-dark btn-block apple-pay-btn">
-                            Pay {paymentDetails.currencyCode} {paymentDetails.amount}
+                            Pay {paymentDetails.currencyCode}$ {paymentDetails.amount}
                         </button>
                     </div>
 
