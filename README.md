@@ -2,5 +2,5 @@
 Payment/ checkout page inspired by Stripe.
 
 ## Preview
+<img width="1470" alt="Screenshot 2024-04-05 at 23 19 32" src="https://github.com/iskevinlemon/payment-page/assets/126497052/a9f3dd0d-a9a3-4304-b510-b14740fd9093">
 
-![image](https://github.com/iskevinlemon/payment-page/assets/126497052/6e788021-1b30-41aa-a9b6-ad8ab5bee253)
