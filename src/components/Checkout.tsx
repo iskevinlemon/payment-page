@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-import { PaymentDetails } from "../App";
+import { PaymentDetails } from "../interfaces";
 import { countryList } from "./countries";
 import CardItem from "./CartItem";
+import {CheckOutDetails} from "../interfaces";
 
-interface CheckoutProps{
-  paymentDetails: PaymentDetails
-}
-
-const Checkout:React.FC<CheckoutProps> = ({paymentDetails}) => {
+const Checkout:React.FC<CheckOutDetails> = ({paymentDetails}) => {
 
     const [country, setCountry] = useState<string>("Choose a country");
     const [expiry, setExpiry] = useState<string>("");

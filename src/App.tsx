@@ -1,18 +1,5 @@
 import Checkout from "./components/Checkout";
-
-export interface ItemDetails{
-  name: string;
-  quantity: number;
-  pricePerUnit: number;
-}
-
-export interface PaymentDetails{
-  isTestMode: boolean;
-  merchantName: string;
-  item: ItemDetails[];
-  currencyCode: string;
-  amount: number;
-}
+import { ItemDetails, PaymentDetails } from "./interfaces";
 
 function App() {
 
