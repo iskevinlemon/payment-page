@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PaymentDetails } from "../App";
 import { countryList } from "./countries";
+import CardItem from "./CartItem";
 
 interface CheckoutProps{
   paymentDetails: PaymentDetails
@@ -8,8 +9,10 @@ interface CheckoutProps{
 
 const Checkout:React.FC<CheckoutProps> = ({paymentDetails}) => {
 
-    const [country, setCountry] = useState("Choose a country");
-    const [expiry, setExpiry] = useState("");
+    const [country, setCountry] = useState<string>("Choose a country");
+    const [expiry, setExpiry] = useState<string>("");
+    const [payButtonLoading, setPayButtonLoading] = useState<boolean>(false);
+    const [totalPayment, setTotalPayment] = useState<number>(0);
 
     function formatCardExpiry(str: string): string{
         if(str.length === 4 && /^\d+$/.test(str)){
@@ -22,10 +25,18 @@ const Checkout:React.FC<CheckoutProps> = ({paymentDetails}) => {
         }
     }
     
-    const [payButtonLoading, setPayButtonLoading] = useState(false);
     function processPayment(): void{
         setPayButtonLoading(true);
     }
+
+    function sumTotalPayment(items: PaymentDetails['item']): void {
+        const total = items.reduce((acc, item) => acc + item.pricePerUnit, 0);
+        setTotalPayment(total);
+    }
+    
+    useEffect(() => {
+        sumTotalPayment(paymentDetails.item);
+    }, [paymentDetails.item]);
 
     return (
         <>
@@ -60,25 +71,17 @@ const Checkout:React.FC<CheckoutProps> = ({paymentDetails}) => {
                             </span>
                         }
                     </h5>
-                    
-                    <div className="card item-card">
-                        <div className="card-body">
-                            <span className="float-end">
-                                {paymentDetails.currencyCode}${paymentDetails.amount}
-                            </span>
-                            <b>{paymentDetails.itemName}</b>
-                            <div>
-                                <small className="text-secondary">
-                                    Quantity: {paymentDetails.itemQuantity}
-                                </small>
-                            </div>
-                        </div>
-                    </div>
 
+                    {paymentDetails.item.map((item, index) => (
+                    <CardItem 
+                        key={index} 
+                        itemDetails={item} />
+                    ))}
+                    
                     <div className="card total-card">
                         <div className="card-body">
                             <span className="float-end">
-                                {paymentDetails.currencyCode}${paymentDetails.amount}
+                                ${totalPayment}
                             </span>
                             <b>Total payment</b>
                         </div>
@@ -201,7 +204,7 @@ const Checkout:React.FC<CheckoutProps> = ({paymentDetails}) => {
                             {payButtonLoading ? (
                                 <>
                                     <div className="text-white spinner-border spinner-border-sm me-2"></div>
-                                    <small className="text-white">Processing payment</small>
+                                    <small className="text-white">Processing</small>
                                 </>
                             ):(
                                 <>Pay {paymentDetails.currencyCode}$ {paymentDetails.amount}</>
